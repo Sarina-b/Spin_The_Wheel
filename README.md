@@ -30,9 +30,9 @@ Users type in their own options, and when they spin the wheel, it randomly selec
 - View the last **50 spins** with results and timestamps  
 
 ---
-## 🧱 Project Structure
-
-```Spin_The_Wheel/
+## Project Structure
+```
+Spin_The_Wheel/
 │
 ├── accounts/
 │   ├── admin.py
