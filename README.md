@@ -117,16 +117,25 @@ Spin_The_Wheel/
 
 ## API Endpoints
 
-| Endpoint | Method | Description |
-|---------------|--------|------------------------------------|
-| `/`           | GET    | Authentication page (Login/Signup) |
-| `/dashboard/` | GET    | Main user dashboard                |
-| `/api/spin/`  | POST   | Perform a spin (requires login)    |
-| `/history/`   | GET    | Show user's last 50 spin results   |
-| `/logout/`    | GET    | Log out from session               |
+| Endpoint       | Method | Description                         |
+|----------------|--------|-------------------------------------|
+| `/api/spin/`   | POST   | Perform a spin (requires login)     |
+
+
 
 ---
 
+## HTML Views
+
+| Endpoint          | Method | Description                                     |
+|------------------|--------|-------------------------------------------------|
+| `/`               | GET    | Authentication page (Login / Signup)           |
+| `/dashboard/`     | GET    | Main user dashboard                             |
+| `/history/`       | GET    | Show last 50 spin results as HTML page         |
+| `/logout/`        | GET    | Log out the user                                |
+
+
+---
 ## Tech Stack
 
 - **Backend:** Django 5.x  
