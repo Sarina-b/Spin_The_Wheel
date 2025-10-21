@@ -37,6 +37,3 @@ class Profile(models.Model):
                 return False, f"cooldown_{int(cooldown_seconds - elapsed)}"
 
         return True, None
-from django.db import models
-
-# Create your models here.

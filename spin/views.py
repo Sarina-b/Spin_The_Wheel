@@ -1,4 +1,7 @@
-from django.http import JsonResponse, HttpResponse
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
+from rest_framework import status
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
@@ -12,17 +15,12 @@ def history_page(request):
     return render(request, 'spin/history_page.html', {'history': history})
 
 
-@login_required
+@api_view(["POST"])
+@permission_classes([IsAuthenticated])
 def spin_api(request):
-    if request.method != "POST":
-        return JsonResponse({"error": "Invalid request method"}, status=405)
-
-    import json
-    data = json.loads(request.body)
-    segments = data.get("segments", [])
-
+    segments = request.data.get("segments", [])
     spin_output = spin_wheel_for_user(request.user, segments)
-    return JsonResponse(spin_output)
+    return Response(spin_output, status=status.HTTP_200_OK)
 
 
 @login_required
