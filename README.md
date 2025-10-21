@@ -32,7 +32,7 @@ Users type in their own options, and when they spin the wheel, it randomly selec
 ---
 ## 🧱 Project Structure
 
-Spin_The_Wheel/
+```Spin_The_Wheel/
 │
 ├── accounts/
 │   ├── admin.py
@@ -110,7 +110,7 @@ Spin_The_Wheel/
 │   └── __init__.py
 │
 └── templates/
-    (base templates if used)
+```
 
 
 ---
