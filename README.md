@@ -31,84 +31,87 @@ Users type in their own options, and when they spin the wheel, it randomly selec
 
 ---
 ## 🧱 Project Structure
+
+Spin_The_Wheel/
 │
 ├── accounts/
-│ ├── admin.py
-│ ├── apps.py
-│ ├── forms.py
-│ ├── models.py
-│ ├── signals.py
-│ ├── tests.py
-│ ├── urls.py
-│ ├── views.py
-│ ├── init.py
-│ │
-│ ├── migrations/
-│ │ ├── 0001_initial.py
-│ │ └── init.py
-│ │
-│ ├── static/
-│ │ ├── accounts/
-│ │ │ ├── help_style.css
-│ │ │ ├── privacy_style.css
-│ │ │ ├── script.js
-│ │ │ ├── small_wheel.jpg
-│ │ │ ├── style.css
-│ │ │ └── wheel2.webp
-│ │ │
-│ │ ├── css/
-│ │ │ └── fonts.css
-│ │ │
-│ │ └── fonts/
-│ │ ├── Poppins-Bold.ttf
-│ │ ├── Poppins-Medium.ttf
-│ │ └── Poppins-Regular.ttf
-│ │
-│ └── templates/accounts/
-│ ├── auth.html
-│ ├── help.html
-│ └── privacy.html
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── models.py
+│   ├── signals.py
+│   ├── tests.py
+│   ├── urls.py
+│   ├── views.py
+│   ├── __init__.py
+│   │
+│   ├── migrations/
+│   │   ├── 0001_initial.py
+│   │   └── __init__.py
+│   │
+│   ├── static/
+│   │   ├── accounts/
+│   │   │   ├── help_style.css
+│   │   │   ├── privacy_style.css
+│   │   │   ├── script.js
+│   │   │   ├── small_wheel.jpg
+│   │   │   ├── style.css
+│   │   │   └── wheel2.webp
+│   │   │
+│   │   ├── css/
+│   │   │   └── fonts.css
+│   │   │
+│   │   └── fonts/
+│   │       ├── Poppins-Bold.ttf
+│   │       ├── Poppins-Medium.ttf
+│   │       └── Poppins-Regular.ttf
+│   │
+│   └── templates/accounts/
+│       ├── auth.html
+│       ├── help.html
+│       └── privacy.html
 │
 ├── spin/
-│ ├── admin.py
-│ ├── apps.py
-│ ├── models.py
-│ ├── tests.py
-│ ├── urls.py
-│ ├── utils.py
-│ ├── views.py
-│ ├── init.py
-│ │
-│ ├── migrations/
-│ │ ├── 0001_initial.py
-│ │ └── init.py
-│ │
-│ ├── static/spin/
-│ │ ├── history_style.css
-│ │ ├── spin_wheel.js
-│ │ ├── wheel_draw.js
-│ │ │
-│ │ └── css/
-│ │ ├── base.css
-│ │ ├── controls.css
-│ │ ├── layout.css
-│ │ ├── navbar.css
-│ │ ├── responsive.css
-│ │ └── wheel.css
-│ │
-│ └── templates/spin/
-│ ├── dashboard.html
-│ └── history_page.html
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py
+│   ├── utils.py
+│   ├── views.py
+│   ├── __init__.py
+│   │
+│   ├── migrations/
+│   │   ├── 0001_initial.py
+│   │   └── __init__.py
+│   │
+│   ├── static/spin/
+│   │   ├── history_style.css
+│   │   ├── spin_wheel.js
+│   │   ├── wheel_draw.js
+│   │   │
+│   │   └── css/
+│   │       ├── base.css
+│   │       ├── controls.css
+│   │       ├── layout.css
+│   │       ├── navbar.css
+│   │       ├── responsive.css
+│   │       └── wheel.css
+│   │
+│   └── templates/spin/
+│       ├── dashboard.html
+│       └── history_page.html
 │
 ├── Spin_The_Wheel/
-│ ├── asgi.py
-│ ├── settings.py
-│ ├── urls.py
-│ ├── wsgi.py
-│ └── init.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── wsgi.py
+│   └── __init__.py
 │
 └── templates/
-(base templates if used)
+    (base templates if used)
+
 
 ---
 
