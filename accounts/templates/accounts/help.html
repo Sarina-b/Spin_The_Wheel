@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Help</title>
+    <link rel="stylesheet" href="{% static 'accounts/help_style.css' %}">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="help-container">
+    <h1>Help & Guide</h1>
+
+    <p>Welcome to <strong>Spin to Win</strong>! Here, you can create your own custom wheel by entering choices in the
+        textarea. Whether it’s names, decisions, tasks, or fun challenges, the wheel will randomly pick one for you!</p>
+
+    <h2>How It Works</h2>
+    <ul>
+        <li><strong>Sign Up:</strong> Create an account to access your dashboard and start spinning. Please use a valid
+            email for account recovery.
+        </li>
+
+        <li><strong>Login:</strong> Enter your username and password to access your spins and rewards.</li>
+
+        <li><strong>Daily Spins:</strong> Each user receives 20 free spins per day. Spins reset automatically at
+            midnight.
+        </li>
+        <li><strong>Enter Your Choices:</strong> Type any items you want into the textarea, each on a new line. These
+            will appear on the wheel.
+        </li>
+        <li><strong>Spin the Wheel:</strong> Click the spin button to let the wheel randomly choose one of your entries.
+        </li>
+        <li><strong>View History:</strong> Every result is saved to your personal history so you can revisit past spins.
+        </li>
+        <li><strong>Account Issues:</strong> If you face any issues such as missing spins or login errors please contact
+            support.
+        </li>
+    </ul>
+
+    <p>For additional help or questions, contact us via <a href="mailto:support@example.com">email</a>. We aim to
+        provide a fun and secure experience for all players.</p>
+    <div class="back-container">
+        {% if request.GET.from == 'dashboard' %}
+            <a href="{% url 'dashboard' %}" class="back-btn">⬅ Back to Dashboard</a>
+        {% else %}
+            <a href="{% url 'auth' %}" class="back-btn">⬅ Back to Home</a>
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>

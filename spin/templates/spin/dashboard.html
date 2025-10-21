@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'spin/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'spin/css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'spin/css/layout.css' %}">
+    <link rel="stylesheet" href="{% static 'spin/css/wheel.css' %}">
+    <link rel="stylesheet" href="{% static 'spin/css/controls.css' %}">
+    <link rel="stylesheet" href="{% static 'spin/css/responsive.css' %}">
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="navbar-left" id="userMenu">
+        <div class="user-icon">👤</div>
+        <div class="username">
+            {{ request.user.username }}
+            <span class="dropdown-arrow">▼</span>
+        </div>
+        <div class="dropdown" id="dropdownMenu">
+            <div class="info">
+                <p>✉️ {{ profile.user.email }}</p>
+                <p>🌍 {{ profile.user.country }}</p>
+                <p>🎡 <span id="remainingSpins">{{ profile.remaining_spins_today }}</span> Spins</p>
+                <p>🔥 {{ profile.consecutive_days }} Days</p>
+            </div>
+            <a href="{% url 'history_page' %}">📜 Spin History</a>
+            <a href="{% url 'logout' %}" class="logout-btn">🚪 Logout</a>
+        </div>
+    </div>
+
+    <div class="navbar-center">
+        <div class="info-box">🎡 Spins: <span id="remainingSpinsCenter">{{ profile.remaining_spins_today }}</span></div>
+        <div class="info-box">🔥 Days: {{ profile.consecutive_days }}</div>
+    </div>
+
+    <div class="navbar-right">
+        <span class="extra-links">
+      <a href="{% url 'privacy' %}?from=dashboard">Privacy Policy</a>
+      <span class="separator">|</span>
+      <a href="{% url 'help' %}?from=dashboard">Help</a>
+    </span>
+    </div>
+</div>
+
+<div class="layout">
+    <main class="main-content">
+        <div id="messageEl" class="message"></div>
+
+        <div class="canvas-wrap">
+            <canvas id="wheel" width="550" height="550"
+                    data-spin-url="{% url 'spin_api' %}"
+                    data-csrf="{{ csrf_token }}"></canvas>
+        </div>
+
+        <div class="action-row">
+            <button id="spinBtn" class="btn primary spin-btn">Spin Now</button>
+        </div>
+    </main>
+    <aside class="controls">
+        <h3>Items (one per line)</h3>
+        <textarea id="segmentInput" placeholder="Example:
+Pizza
+Ice cream
+Study
+Exercise" aria-label="Segments input"></textarea>
+
+        <div class="controls-row">
+            <button id="updateSegmentsBtn" class="btn primary">Apply Segments</button>
+            <button id="clearSegmentsBtn" class="btn neutral">Clear</button>
+        </div>
+
+        <p class="hint">Type each item on a new line. Press <strong>Apply Segments</strong> to draw the wheel.</p>
+    </aside>
+</div>
+<div id="resultModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+        <button id="closeModal" class="modal-close" aria-label="Close">&times;</button>
+        <h2 id="modalResult"></h2>
+        <div id="modalExtra"></div>
+    </div>
+</div>
+
+<script type="module" src="{% static 'spin/wheel_draw.js' %}"></script>
+<script type="module" src="{% static 'spin/spin_wheel.js' %}"></script>
+
+</body>
+</html>

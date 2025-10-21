@@ -1,0 +1,37 @@
+.layout {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 40px;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    gap: 5px;
+    flex-direction: row;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    z-index: 1;
+    width: 550px;
+
+}
+
+.action-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.message {
+    min-width: 200px;
+    text-align: center;
+    color: #c53030;
+    font-weight: 600;
+    margin-bottom: 5%;
+}

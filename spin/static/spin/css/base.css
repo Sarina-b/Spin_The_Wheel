@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right,
+    #e6f7ff 0%,
+    #c8eafd 20%,
+    #a3d7fb 45%,
+    #88bfed 75%,
+    #8abbf6 100%
+    );
+    height: auto;
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

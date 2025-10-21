@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>History</title>
+    <link rel="stylesheet" href="{% static 'spin/history_style.css' %}?v=3">
+</head>
+<body>
+<h2>📜 Spin History</h2>
+
+<ul>
+    {% for h in history %}
+        <li>{{ h.date }} - {{ h.result}}</li>
+    {% empty %}
+        <li>No spins yet</li>
+    {% endfor %}
+</ul>
+
+<div class="back-container">
+    <a href="{% url 'dashboard' %}" class="back-btn">⬅ Back to Dashboard</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Auth</title>
+    <link rel="stylesheet" href="{% static 'accounts/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+</head>
+<body>
+<p id="main_title">Spin The Wheel</p>
+<div class="container" id="container">
+    <div class="form-box login">
+        <form method="POST">
+            {% csrf_token %}
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" name="username" placeholder="Username" required>
+                <i class="bx bxs-user"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" placeholder="Password" required>
+                <i class="bx bxs-lock-alt"></i>
+            </div>
+            {% if request.method == "POST" and messages %}
+                <div class="messages">
+                    {% for message in messages %}
+                        <p class="{{ message.tags }}">{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <button type="submit" name="login" class="btn">Login</button>
+            <div class="form-links">
+                <a href="{% url 'privacy' %}">Privacy Policy |</a>
+                <a href="{% url 'help' %}">Help</a>
+            </div>
+        </form>
+    </div>
+    <div class="form-box register">
+        <form method="POST">
+            {% csrf_token %}
+            <h1>Sign Up</h1>
+            <div class="input-box">
+                <input type="text" name="username" placeholder="Username" required>
+                <i class="bx bxs-user"></i>
+            </div>
+            <div class="input-box">
+                <input type="email" name="email" placeholder="Email" required>
+                <i class="bx bxs-envelope"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" placeholder="Password" required>
+                <i class="bx bxs-lock-alt"></i>
+            </div>
+            <div class="input-box">
+                <input type="text" name="country" placeholder="Country">
+                <i class="bx bxs-flag-alt"></i>
+            </div>
+            <button type="submit" name="signup" class="btn">Sign up</button>
+            <div class="form-links">
+                <a href="{% url 'privacy' %}">Privacy Policy |</a>
+                <a href="{% url 'help' %}">Help</a>
+            </div>
+        </form>
+    </div>
+    <div class="toggle-box">
+        <div class="toggle-panel toggle-left">
+            <h1 id="welcome">Welcome</h1>
+            <p>Don't have an account?</p>
+            <button class="btn register-btn">Sign up</button>
+        </div>
+        <div class="toggle-panel toggle-right">
+            <h1 id="welcome_back">Welcome Back!</h1>
+            <p>Already have an account?</p>
+            <button class="btn login-btn">Login</button>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'accounts/script.js' %}"></script>
+</body>
+</html>

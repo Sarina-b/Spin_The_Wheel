@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Privacy Policy</title>
+    <link rel="stylesheet" href="{% static 'accounts/privacy_style.css' %}">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="policy-container">
+    <h1>Privacy Policy</h1>
+    <p>Your privacy matters. Spin to Win allows you to create personalized wheels using your own entries. We collect
+        minimal data to offer a smooth and secure experience.</p>
+
+    <h2>Information We Collect</h2>
+    <ul>
+        <li><strong>Account Data:</strong> Username and email for login and account recovery.</li>
+        <li><strong>Custom Entries & History:</strong> Your wheel entries and past results are saved only for your
+            personal use.
+        </li>
+        <li><strong>Usage Activity:</strong> Spin results and interactions to ensure fair use and improve features.</li>
+    </ul>
+
+    <h2>How We Use Your Data</h2>
+    <ul>
+        <li>To display your custom history and saved entries.</li>
+        <li>To improve user experience and add new features.</li>
+        <li>To maintain fair functionality and prevent misuse.</li>
+    </ul>
+
+    <h2>Data Protection</h2>
+    <p>We do not sell or share your information with third parties. All data is stored securely and used only within the
+        platform to enhance your experience.</p>
+
+    <h2>Cookies</h2>
+    <p>Cookies may be used to remember your login session and preferences, ensuring a faster and smoother
+        interaction.</p>
+
+    <h2>Your Control</h2>
+    <p>You may request data removal or account deletion at any time. For assistance, please contact support.</p>
+
+</div>
+<div class="back-container">
+    {% if request.GET.from == 'dashboard' %}
+        <a href="{% url 'dashboard' %}?from=dashboard" class="back-btn">⬅ Back to Dashboard</a>
+    {% else %}
+        <a href="{% url 'auth' %}" class="back-btn">⬅ Back to Home</a>
+    {% endif %}
+</div>
+</body>
+</html>
